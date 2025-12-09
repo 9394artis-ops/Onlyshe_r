@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shayari World</title>
+<style>
+body {font-family: Arial; background: #f3f3f3; margin: 0; padding: 0;}
+header {background: white; padding: 20px; text-align: center; font-size: 26px; font-weight: bold; box-shadow: 0 2px 6px rgba(0,0,0,0.1);}
+.category {display: flex; gap: 10px; overflow-x: auto; padding: 15px; background: white;}
+.category button {padding: 10px 18px; border: none; background: #0078ff; color: white; border-radius: 20px; cursor: pointer; font-size: 14px;}
+.box {background: white; margin: 15px; padding: 18px; border-radius: 10px; box-shadow: 0 0 6px rgba(0,0,0,0.1); font-size: 18px; line-height: 28px; position: relative;}
+.copyBtn {position: absolute; right: 15px; bottom: 15px; background: #0078ff; color: white; border: none; padding: 6px 12px; border-radius: 6px; cursor: pointer;}
+</style>
+</head>
+<body>
+<header>Simple Shayari Website</header>
+<div class="category">
+<button onclick="show('love')">Love</button>
+<button onclick="show('sad')">Sad</button>
+<button onclick="show('attitude')">Attitude</button>
+<button onclick="show('life')">Life</button>
+</div>
+<div id="shayari-container"></div>
+<script>
+const shayaris = {
+love: ["Dil karta hai tumhe baahon mein bhar loon,<br>aur kah doon,<br>tum hi ho mera sab kuchh ❤️","Tere bina adhura hoon main,<br>aur tere saath poora ❤️"],
+sad: ["Kuchh yaadein dard nahi deti,<br>dil ko khamosh kar jaati hain 💔","Hum bhi kabhi kisi ke apne the,<br>aaj tanhaayi humse apni lagti hai... 💔"],
+attitude: ["Hum badal jaaye to baat aur hai,<br>warna takat to aaj bhi shabdon ki rakhte hain 😎","Dushman banane ka shauk nahi,<br>dosti nibhaane wale log kam milte hain 😎"],
+life: ["Zindagi ek kahani hai,<br>samajh jao to achhi,<br>varna dard hi dard hai.","Muskurate raho, zindagi hai,<br>koi movie nahi jo dobara chale 😊"]
+};
+function show(type) {
+let container = document.getElementById("shayari-container");
+container.innerHTML = "";
+shayaris[type].forEach(sh => {
+container.innerHTML += `<div class="box">${sh}<button class="copyBtn" onclick="copyShayari(this)">Copy</button></div>`;
+});
+}
+function copyShayari(btn) {
+let text = btn.parentElement.innerText.replace("Copy", "");
+navigator.clipboard.writeText(text);
+btn.innerText = "Copied!";
+setTimeout(() => (btn.innerText = "Copy"), 1500);
+}
+</script>
+</body>
+</html>
