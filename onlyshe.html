@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>OnlyShe</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+        color: #fff;
+    }
+
+    /* Top Bar */
+    .topbar {
+        width: 100%;
+        padding: 15px;
+        background: rgba(255, 255, 255, 0.2);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        backdrop-filter: blur(10px);
+    }
+
+    .title {
+        font-size: 22px;
+        font-weight: bold;
+        margin-left: 10px;
+    }
+
+    /* Hamburger Menu */
+    .menu-icon {
+        font-size: 30px;
+        margin-right: 15px;
+        cursor: pointer;
+    }
+
+    /* Side Menu */
+    .side-menu {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        top: 0;
+        right: 0;
+        background: #fff;
+        color: #333;
+        overflow-x: hidden;
+        transition: 0.4s;
+        padding-top: 60px;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.3);
+    }
+
+    .side-menu a {
+        padding: 10px 20px;
+        display: block;
+        font-size: 18px;
+        color: #444;
+        text-decoration: none;
+    }
+
+    .side-menu a:hover {
+        background: #f2f2f2;
+    }
+
+    /* Home Buttons */
+    .container {
+        text-align: center;
+        margin-top: 80px;
+    }
+
+    .btn {
+        display: block;
+        width: 80%;
+        margin: 20px auto;
+        padding: 18px;
+        background: #ffffff;
+        color: #ff3366;
+        font-size: 20px;
+        border-radius: 12px;
+        text-decoration: none;
+        font-weight: bold;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        transition: 0.3s;
+    }
+
+    .btn:hover {
+        transform: scale(1.05);
+    }
+
+    /* Pages */
+    .box {
+        background: white;
+        color: #333;
+        margin: 20px;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+</style>
+
+<script>
+    function openMenu() {
+        document.getElementById("sideMenu").style.width = "250px";
+    }
+
+    function closeMenu() {
+        document.getElementById("sideMenu").style.width = "0";
+    }
+</script>
+
+</head>
+<body>
+
+<!-- Topbar -->
+<div class="topbar">
+    <div class="title">OnlyShe</div>
+    <div class="menu-icon" onclick="openMenu()">☰</div>
+</div>
+
+<!-- SIDE MENU -->
+<div id="sideMenu" class="side-menu">
+    <a href="javascript:void(0)" onclick="closeMenu()">✖ Close</a>
+    <a>👤 Rahul Das</a>
+    <a href="https://instagram.com/Onlyshe_r" target="_blank">📸 Instagram</a>
+</div>
+
+<!-- MAIN HOME PAGE -->
+<div class="container">
+    <a class="btn" href="#shayari">💖 Romantic & Sad Shayari</a>
+    <a class="btn" href="#quotes">📝 All Types Quotes</a>
+</div>
+
+<!-- SHAYARI PAGE -->
+<div id="shayari" class="box">
+    <h2>💖 Romantic & Sad Shayari</h2>
+    <p>“Tumhari yaadein mere dil ka hissa ban chuki hain.”</p>
+    <p>“Chaha toh bahut tha, mila tum phir bhi nahi.”</p>
+    <p>“Tum paas nahi, par ehsaas hamesha rehta hai.”</p>
+</div>
+
+<!-- QUOTES PAGE -->
+<div id="quotes" class="box">
+    <h2>📝 All Types Quotes</h2>
+    <p>“Success comes to those who keep going.”</p>
+    <p>“Your vibe attracts your tribe.”</p>
+    <p>“Life is better when you focus on yourself.”</p>
+</div>
+
+</body>
+</html>
